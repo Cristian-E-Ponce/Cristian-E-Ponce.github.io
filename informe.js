@@ -10,10 +10,6 @@ import {
 
   const porcentajeAgua = document.getElementById("porcentaje-agua");
   //const designacionApi = document.getElementById("designacion-api");
-  //const designacionApi = document.getElementById("designacion-api");
-  //const designacionApi = document.getElementById("designacion-api");
-  //const designacionApi = document.getElementById("designacion-api");
-  //const designacionApi = document.getElementById("designacion-api");
   //const tasksContainer = document.getElementById("tasks-container"); 
   
   
