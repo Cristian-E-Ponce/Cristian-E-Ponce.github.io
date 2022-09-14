@@ -27,7 +27,27 @@ const firebaseConfig = {
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 
+export const db = getFirestore();
 
+/**
+ * Save a New Task in Firestore
+ * @param {string} title the title of the Task
+ * @param {string} description the description of the Task
+ */
+//export const saveTask = (title, description) =>  addDoc(collection(db, "configDina"), { title, description });
 
-//---------------------------[ C R U D]-----------------------------------------------//
-const db = getFirestore();
+//export const onGetTasks = (callback) =>  onSnapshot(collection(db, "Dinamometrias"), callback);
+
+/**
+ *
+ * @param {string} id Task ID
+ */
+//export const deleteTask = (id) => deleteDoc(doc(db, "configDina", id));
+
+export const getTask = (IdDina) => getDoc(doc(db, "Dinamometrias", IdDina));
+
+export const getX = (id) => getDoc(id);
+
+//export const updateTask = (id, newFields) =>  updateDoc(doc(db, "configDina", id), newFields);
+
+export const getTasks = () => getDocs(collection(db, "Dinamometrias"));
