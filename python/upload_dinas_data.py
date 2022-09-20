@@ -19,7 +19,7 @@ from firebase_admin import firestore
 #from firebase_admin import auth
 from firebase_admin import db
 
-cred = credentials.Certificate("python/fir-crud-33132-firebase-adminsdk-eqg09-ba5c1529d4")
+cred = credentials.Certificate("python/fir-crud-33132-firebase-adminsdk-eqg09-ba5c1529d4.json")
 app = firebase_admin.initialize_app(cred, {
     'databaseURL' : 'https://fir-crud-33132.firebaseio.com'
 })
@@ -27,7 +27,7 @@ app = firebase_admin.initialize_app(cred, {
 db = firestore.client()
 #print(type(db))
 query = db.collection('Dinamometrias')
-#query.get()
+query.get()
 
 
 for eco in query.stream():
