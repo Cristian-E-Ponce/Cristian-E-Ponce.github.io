@@ -26,12 +26,16 @@ app = firebase_admin.initialize_app(cred, {
 #print(app.name) 
 db = firestore.client()
 #print(type(db))
+
+#-------------------------------[ START GET ]---------------------------------------------
 query = db.collection('Dinamometrias')
 query.get()
 
 
 for eco in query.stream():
     print('ID : {} --> {} '.format(eco.id , eco.to_dict()))
+
+#-------------------------------[ END GET ]---------------------------------------------    
 
 
 
