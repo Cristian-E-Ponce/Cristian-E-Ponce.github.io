@@ -25,7 +25,7 @@ def create_json():
 
 
 def read_json():
-    with open('carp/data.json') as file:
+    with open('carp/cartaSup.json') as file:
         data= json.load(file)
 
         for client in data['clients']:
@@ -35,6 +35,13 @@ def read_json():
         print("")       
         print(data)  
 
+def read_cart():
+    with open('carp/cartaSup.json') as file:
+        data = json.load(file)
+    print(data)
+
+
+
 def request_json():
     resp = requests.get('http://ip-api.com/json/208.80.152.201')     
     data = json.loads(resp.content)
@@ -43,5 +50,6 @@ def request_json():
 if __name__ == '__main__':
 
     #create_json()
-    read_json()    
+    #read_json()    
     #request_json()
+    read_cart()

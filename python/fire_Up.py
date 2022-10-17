@@ -41,16 +41,18 @@ query = db.collection('Dinamometrias')
 # for eco in query.stream():
 #     print('ID : {} --> {} '.format(eco.id , eco.to_dict()))
 
-#-------------------------------[ UPDATA ]---------------------------------------------    
-data = {
-    'name': 'Los Angeles2',
-    'state': 'CA2',
-    'country': 'USA2'
-}
+#-------------------------------[ UPDATA - EJEM 1 ]---------------------------------------------    
+# data = {
+#     'name': 'Los Angeles2',
+#     'state': 'CA2',
+#     'country': 'USA2'
+# }
 
-# Add a new doc in collection 'cities' with ID 'LA'
-query.document('Dina-nuevo4').set(data)
-
-
+# # Add a new doc in collection 'cities' with ID 'LA'
+# query.document('Dina-nuevo4').set(data)
 
 
+#-------------------------------[ UPDATA - EJEM 1 ]--------------------------------------------- 
+with open('carp/cartaSup.json') as file:
+    data = json.load(file)
+    query.document('Dina-nuevo22').set(data)
