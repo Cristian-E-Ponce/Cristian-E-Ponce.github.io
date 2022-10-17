@@ -35,32 +35,22 @@ db = firestore.client()
 
 #-------------------------------[ START GET ]---------------------------------------------
 query = db.collection('Dinamometrias')
-query.get()
+#query.get()
 
 
-for eco in query.stream():
-    print('ID : {} --> {} '.format(eco.id , eco.to_dict()))
+# for eco in query.stream():
+#     print('ID : {} --> {} '.format(eco.id , eco.to_dict()))
 
 #-------------------------------[ UPDATA ]---------------------------------------------    
+data = {
+    'name': 'Los Angeles2',
+    'state': 'CA2',
+    'country': 'USA2'
+}
 
-
-with open("ordenes.json") as archivo:
-    datos =json.load (archivo)
-
-    for orden in datos["ordenes"]:
-        del orden["cliente"]
-with open("ordenes.json", 'w') as ordenes_nuevas:
-    json.dump(datos, ordenes_nuevas)        
-
-
+# Add a new doc in collection 'cities' with ID 'LA'
+query.document('Dina-nuevo4').set(data)
 
 
 
 
-
-
-
-
-
-
-   
