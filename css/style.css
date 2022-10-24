@@ -90,7 +90,7 @@ a:hover {
 }
 
 .overlay-mf {
-  background-color: #0078ff;
+  background-color: #000000;
 }
 
 .overlay-mf {
@@ -1262,4 +1262,10 @@ footer .credits a {
   .back-to-top {
     bottom: 15px;
   }
+}
+
+/*------------ agregado -----------*/
+.dev{
+  text-decoration: none;
+  color: #0078ff;
 }
