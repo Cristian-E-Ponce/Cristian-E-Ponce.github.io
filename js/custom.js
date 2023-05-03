@@ -43,24 +43,5 @@
 	});
 
 
-/******************************************
-           AGREGADOS
-******************************************/
 
-
-
-	// function startCount() {
-	// 	let count = 0;
-	// 	setInterval(function() {
-	// 		count += 100;
-	// 		if(count > 27000) {
-	// 			document.getElementById("contador").innerHTML = "27K";
-	// 			clearInterval();
-	// 		} else if(count >= 1000) {
-	// 			document.getElementById("contador").innerHTML = (count / 1000).toFixed(0) + "K";
-	// 		} else {
-	// 			document.getElementById("contador").innerHTML = count;
-	// 		}
-	// 	}, 1000);
-	// }
 	
