@@ -1026,7 +1026,7 @@ SECTIONS
 
 .slider-bottom {
     position: absolute;
-    bottom: 40px;
+    bottom: 10px;
     left: 0;
     font-size: 10px;
     text-transform: uppercase;
