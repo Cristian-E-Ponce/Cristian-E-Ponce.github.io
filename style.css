@@ -1677,7 +1677,7 @@ TESTIMONIAL
 }
 
 .p120 {
-    padding-bottom: 190px !important;
+    padding-bottom: 140px !important;
 }
 
 .section.lb {
@@ -1685,7 +1685,8 @@ TESTIMONIAL
 }
 
 .tagline-message h3 {
-    padding: 0;
+    padding-top: 30px;
+    padding-bottom: 10px;
     font-size: 34px;
     margin: 0;
     color: #ffffff;
