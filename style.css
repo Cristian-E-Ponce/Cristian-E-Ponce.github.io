@@ -2325,12 +2325,29 @@ RESPONSIVE
     background-image: url("images/fot2.jpg");
     background-size: cover; /* Para que la imagen se ajuste al tamaño del div */
     background-attachment: fixed; /* Para que la imagen se desplace con la página */
+    background-repeat: no-repeat; /* Para que la imagen no se repita */
+
+    @media (max-width: 767px) {
+        background-size: cover; /* Para que la imagen se ajuste al tamaño del div */
+      background-attachment: local; /* Para que la imagen se desplace con la página */
+      background-position: center center; /* Para que la imagen esté centrada en el div */
+    }
   }
-.contactanos {
+
+  .contactanos {
     background-image: url("images/fot1.jpg");
     background-size: cover; /* Para que la imagen se ajuste al tamaño del div */
     background-attachment: fixed; /* Para que la imagen se desplace con la página */
-  }
+    background-repeat: no-repeat; /* Para que la imagen no se repita */
+    
+    /* Estilos para dispositivos móviles */
+    @media (max-width: 767px) {
+        background-size: cover; /* Para que la imagen se ajuste al tamaño del div */
+      background-attachment: local; /* Para que la imagen se desplace con la página */
+      background-position: center center; /* Para que la imagen esté centrada en el div */
+    }
+}
+  
 
 .color-azul{
     color: #01bacf;
