@@ -975,7 +975,7 @@ SECTIONS
 
 .section {
     background-color: #ffffff;
-    padding: 8rem 0;
+    padding: 9px 0;
     position: relative;
     display: block;
 }
@@ -1690,7 +1690,7 @@ TESTIMONIAL
     font-size: 34px;
     margin: 0;
     color: #ffffff;
-    font-weight: bold;
+    font-weight: 100;
 }
 
 .section.lb .tagline-message h3,
@@ -1719,7 +1719,7 @@ TESTIMONIAL
 .callout .lead {
     color: #ffffff;
     font-size: 29px;
-    font-weight: bold;
+    font-weight: 100;
     line-height: 36px;
     padding: 30px 8px 0;
 }
@@ -2041,7 +2041,7 @@ BUTTONS
     border: 1px solid #fff;
     font-weight: bold;
     color: #ffffff !important;
-    padding: 10px 20px;
+    padding: 5px 10px;
     text-transform: capitalize;
 }
 
