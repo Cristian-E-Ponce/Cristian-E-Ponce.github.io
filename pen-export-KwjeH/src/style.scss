@@ -1,0 +1,45 @@
+@import "compass/css3";
+
+@import "compass/reset";
+@import "compass";
+
+
+.warpper {
+
+}
+
+.sortable{
+    @include no-bullets();
+    margin: 20px;
+}
+.toggle {
+    @include inline-block;
+    background: #eee;
+    border: 1px solid #aaa;
+    margin: 3px 0;
+    padding: 5px 30px 5px 20px;
+    position: relative;
+
+    &:hover {
+        border-color: #00f;
+    }
+
+    input {
+        width: 350px;
+    }
+    
+    .mover {
+      cursor: move;
+      background: #ccc;
+      position: absolute;
+      height: 20px;
+      width: 10px;
+      left: 5px;
+    }
+    .remove {
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+        top: 7px;
+    }
+}
