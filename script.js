@@ -1,62 +1,65 @@
-// var sortable = $('.sortable');
-// sortable.sortable({
-//   axis: 'y',
-//   cursor: 'move',
-//   cursorAt: {top: 10},
-//   handle: '.toggle',
-//   // helper: 'clone',
-//   opacity: '0.5',
-//   // placeholder: 'sortable-placeholder',
-//   change: function(event, ui) {
-//     var item = $('li.ui-sortable-placeholder', sortable),
-//         num;
-//     // console.log('change');
-//     // console.log(ui);
-//     // console.log($(this));
-//     // console.log($('.num', item).text());
-//     $('li:not(.ui-sortable-helper)', sortable).each(function(index, item) {
-//       // console.log(item);
-//       // console.log($('.num', item));
-//       // $('.num', item).text(index + 1);
-//       if ($('.num', item).length != 0) {
-//         // console.log(item);
-//         $('.num', item).text(index + 1);
-//       } else {
-//         console.log(index +1);
-//         $(".ui-sortable-helper .num").text(index + 1);
-//       }
-//     });
-//     // $(".num", ui.item).text($('.num', item).text());
-//   }
-// })
-// .disableSelection();
+/*
+ APLICAÇÃO TESTE LISTVIEW IONIC FRAMEWORK 
+ CRIADO POR CONCEICAO LOURENCO 
+ DESENVOLVEDORA MOBILE
+ PYTHON E JAVA
+ ANO 2016
+*/
 
-// $('input', sortable).bind('mousedown', function(evt) {
-//   evt.stopPropagation();
-// });
-// $('.remove', sortable).bind({
-//   mousedown: function(evt) {
-//     evt.stopPropagation();
-//   },
-//   click: function(evt) {
-//     var currentRow = $(this).parents('li'),
-//         nextAllRow = currentRow.nextAll();
-//     nextAllRow.each(function(index, item) {
-//       $('.num', item).text($('.num', item).text() - 1);
-//     });
-//     currentRow.remove();
-//   }
-// });
-// // console.log(window.location);
+// SIMULANDO UM WEBSERVICE OU BASE DE DADOS
+ 
+angular.module('applistView', ['ionic'])
+  .config(function($stateProvider, $urlRouterProvider) {
+    $stateProvider
+      .state('app', {
+        url: "/listagem",
+        abstract: true
+      })
+    $urlRouterProvider.otherwise("app");
+  })
+  .controller('AppCtrl', function($scope) {
+    $scope.shouldShowDelete = false;
+    $scope.shouldShowReorder = false;
+    $scope.listCanSwipe = true
 
-
-$(document).ready(function () {
-  // Hacer que los elementos de la lista sean reordenables
-  $(".sortable").sortable();
-
-  // Cambiar los valores de las contraseñas
-  $(".sortable").on("change", "input[type='text']", function () {
-    // Aquí puedes agregar la lógica para cambiar el valor de la contraseña
-    // Por ejemplo, puedes usar $(this).val() para obtener el nuevo valor del input.
+    $scope.items =  [{
+      id: 1,
+      titulo: 'Bolo de Chocolate',
+      detalhes: 'Serve a 20 pessoas',
+      image: '#'
+    }, {
+      id: 2,
+      logo: 'img/logo2.png',
+      titulo: 'Bolo de Damasco',
+      detalhes: 'Serve a 15 pessoas',
+      image: '#'
+    }, {
+      id: 3,
+      logo: 'img/logo3.png',
+      titulo: 'Bolo Branco',
+      detalhes: 'Serve a 25 pessoas',
+      image: '#'
+    }, {
+      id: 4,
+      logo: 'img/logo4.png',
+      titulo: 'Bolo de limão',
+      detalhes: 'Serve a 10 pessoas',
+      image: '#'
+    }, {
+      id: 5,
+      logo: 'img/logo4.png',
+      titulo: 'Bolo de brigadeiro',
+      detalhes: 'serve a 15 pessoas',
+       image: '#'
+    }];
+    //IMPLEMENTANDO AS POSSIVEIS FUNÇÕES
+    $scope.edit = function(item) {
+       console.log("Editar item : " + item.titulo );
+    }
+    $scope.share = function(item) {
+       console.log("Share item : " + item.titulo );
+    }
+    $scope.onItemDelete = function(item) {
+       console.log("Delete item : " + item.titulo );
+    }
   });
-});

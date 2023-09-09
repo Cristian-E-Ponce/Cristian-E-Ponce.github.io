@@ -2,57 +2,79 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - A Pen by light</title>
-  <link rel='stylesheet' href='//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'><link rel="stylesheet" href="./style.css">
+  <title>CodePen - ListView Ionic</title>
+  
 
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<ul class="sortable">
-  <li>
-    <label>Password<span class="num">1</span>:</label>
-    <div class="toggle">
-      <div class="mover"></div>
-      <input type="text" value="a" />
-      <span class="remove">x</span>
-    </div>
-  </li>
-  <li>
-    <label>Password<span class="num">2</span>:</label>
-    <div class="toggle">
-      <div class="mover"></div>
-      <input type="text" value="b" />
-      <span class="remove">x</span>
-    </div>
-  </li>
-  <li>
-    <label>Password<span class="num">3</span>:</label>
-    <div class="toggle">
-      <div class="mover"></div>
-      <input type="text" value="c" />
-      <span class="remove">x</span>
-    </div>
-  </li>
-  <li>
-    <label>Password<span class="num">4</span>:</label>
-    <div class="toggle">
-      <div class="mover"></div>
-      <input type="text" value="d" />
-      <span class="remove">x</span>
-    </div>
-  </li>
-  <li>
-    <label>Passwords<span class="num">6</span>:</label>
-    <div class="toggle">
-      <div class="mover"></div>
-      <input type="text" value="e" />
-      <span class="remove">x</span>
-    </div>
-  </li>
-</ul>
+<html ng-app="applistView">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <title> LISTA DE ITENS </title>
+    <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+    <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+  </head>
+
+  <body ng-controller="AppCtrl">
+
+    <ion-header-bar class="bar-royal">
+      <div class="buttons">
+        <button class="button button-icon icon ion-ios-minus-outline"
+                ng-click="data.showDelete = !data.showDelete; data.showReorder = false"></button>
+      </div>
+      <h1 class="title">Listagem de produtos </h1>
+      <div class="buttons">
+        <button class="button" ng-click="data.showDelete = false; data.showReorder = !data.showReorder">
+          Reordenar
+        </button>
+      </div>
+    </ion-header-bar>
+
+    <ion-content>
+
+      <!-- busca -->
+      
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper" id="search-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" placeholder="Buscar...">
+        </label>
+      </div>
+
+      <!-- The list directive is great, but be sure to also checkout the collection repeat directive when scrolling through large lists -->
+
+      <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+
+        <ion-item ng-repeat="item in items" 
+                  href="#/item/{{item.id}}" class="item-remove-animate">
+          {{ item.image }} {{ item.titulo }} 
+          <p>{{ item.detalhes }}</p>
+          <ion-delete-button class="ion-minus-circled" 
+                             ng-click="onItemDelete({{item}})">
+          </ion-delete-button>
+          <ion-option-button class="button-assertive"
+                             ng-click="edit(item)">
+            Edit
+          </ion-option-button>
+          <ion-option-button class="button-calm"
+                             ng-click="share(item)">
+            Share
+          </ion-option-button>
+          <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+        </ion-item>
+
+      </ion-list>
+
+    </ion-content>
+
+  </body>
+</html>
 <!-- partial -->
-  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script><script  src="./script.js"></script>
+  <script  src="./script.js"></script>
 
 </body>
 </html>
