@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0,initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/botones.css" media="screen" />
+    <title>Realidad Aumentada Unaj</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+
+    <script type="text/javascript" src="./js/marcador.js"></script>
+
+    <script type="text/javascript" src="./js/voz.js"></script>
+
+</head>
+
+<body>
+   <div class="boton_container">
+        
+            <button class="boton" role="button" id="pre"><=Anterior</button>
+            <button class="boton" role="button" onclick="activarAsistenteVoz()" id="voz">Activar Asistente de voz</button>
+            <button class="boton" role="button" id="sig">Siguiente=></button>
+   </div>
+    <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled:false">
+
+            <a-marker  type="pattern" url="./assets/markers/pattern-1.patt" registerevents id="1">
+                <a-entity id="" class="modelo" gltf-model="" scale=".30 .30 .30" crossOrigin="anonymus"></a-entity>
+                
+                <a-text class="titulo"
+                    value="test" 
+                    negate="false"
+                    align="center"
+                    font="https://cdn.aframe.io/fonts/Monoid.fnt"
+                    color="white"          
+                    scale="3 3 0" 
+                    position="0 -5 0"
+                    rotation="245 0 0"
+                    >
+                </a-text>
+
+            </a-marker>
+
+            <a-marker type="pattern" url="./assets/markers/pattern-2.patt" registerevents id="2">
+                <a-entity id="" class="modelo" gltf-model="" scale=".30 .30 .30" crossOrigin="anonymus"></a-entity>
+
+                <a-text class="text"
+                    value="" 
+                    negate="false"
+                    align="center"
+                    font="https://cdn.aframe.io/fonts/Monoid.fnt"
+                    color="white"          
+                    scale="1 1 1" 
+                    position="2 0 -0.5"
+                    rotation="245 0 0"
+                    animation="property: position; to: 1.8 0 -0.5; dur: 10000; easing: linear; loop: true">
+                </a-text>
+            </a-marker>
+
+            <a-marker preset="hiro" registerevents id="3">
+                <a-entity id="" class="modelo" gltf-model="" scale="1 1 1" crossOrigin="anonymus"></a-entity>
+                <a-text class="text"
+                    value="" 
+                    negate="false"
+                    align="center"
+                    font="https://cdn.aframe.io/fonts/Monoid.fnt"
+                    color="white"          
+                    scale="1 1 1" 
+                    position="2 0 -0.5"
+                    rotation="245 0 0"
+                    animation="property: position; to: 1.8 0 -0.5; dur: 10000; easing: linear; loop: true">
+                </a-text>
+            </a-marker>
+
+            <a-marker preset="kanji" registerevents id="4">
+                <a-entity id="" class="modelo" gltf-model="" scale=".30 .30 .30" crossOrigin="anonymus"></a-entity>
+
+                <a-text class="text"
+                    value="" 
+                    negate="false"
+                    align="center"
+                    font="https://cdn.aframe.io/fonts/Monoid.fnt"
+                    color="white"          
+                    scale="1 1 1" 
+                    position="2 0 -0.5"
+                    rotation="245 0 0"
+                    animation="property: position; to: 1.8 0 -0.5; dur: 10000; easing: linear; loop: true">
+                </a-text>
+            </a-marker>
+
+            
+
+            <a-entity camera></a-entity>
+        </a-scene>
+
+        <script type="text/javascript" src="./js/boton.js"></script>
+</body>
+
+   
+
+</html>

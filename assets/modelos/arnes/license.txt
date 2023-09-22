@@ -1,0 +1,11 @@
+Model Information:
+* title:	Construction Harness
+* source:	https://sketchfab.com/3d-models/construction-harness-41638e5ec5264ed481d7cda15806ca0e
+* author:	Purdue Envision Center (https://sketchfab.com/EnvisionCenter)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Construction Harness" (https://sketchfab.com/3d-models/construction-harness-41638e5ec5264ed481d7cda15806ca0e) by Purdue Envision Center (https://sketchfab.com/EnvisionCenter) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

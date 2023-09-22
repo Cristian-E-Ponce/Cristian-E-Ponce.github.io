@@ -1,80 +1,338 @@
 <!DOCTYPE html>
-<html lang="en" >
+
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>CodePen - ListView Ionic</title>
-  
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<html ng-app="applistView">
-  <head>
-
     <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    
+    <title>Realidad Aumentada Unaj</title>
+    <!-- script de A-Frame version1 1.0.0 -->
+    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+    <!-- script de AR.JS con soporte de markers -->
+   <!--script src="AR.js-master/aframe/build/aframe-ar.js"></script-->
+  <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+</head>
 
-    <title> LISTA DE ITENS </title>
-    <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
-    <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
-  </head>
+<body>
+   
+    <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled:false">
+        <a-marker type="pattern" preset="kanji" >
+        <!--animation="property: rotation; to:450 180 0; loop: true; dur: 10000"
+        animation="property: position; to: 1 0 0; dur: 10000; easing: linear; loop: true"
 
-  <body ng-controller="AppCtrl">
+          text="align: center; width: 3; value:botas;"
+          text="align: center; width: 3; value: Arnes;"
+           text="align: center; width: 3; value: Gafas Protectoras;"
+           text="align: center; width: 3; value: Casco;"-->
 
-    <ion-header-bar class="bar-royal">
-      <div class="buttons">
-        <button class="button button-icon icon ion-ios-minus-outline"
-                ng-click="data.showDelete = !data.showDelete; data.showReorder = false"></button>
-      </div>
-      <h1 class="title">Listagem de produtos </h1>
-      <div class="buttons">
-        <button class="button" ng-click="data.showDelete = false; data.showReorder = !data.showReorder">
-          Reordenar
-        </button>
-      </div>
-    </ion-header-bar>
+           
+          <a-entity 
+           gltf-model="./assets/modelos/casco2/scene.gltf"
+           position="0 0 -3"
+           rotation="270 0 0"
+           scale=".3 .3 .3"            
+           crossOrigin="anonymus">
+           </a-entity>
+           
+           <a-entity
+             gltf-model="./assets/modelos/gafas/scene.gltf"
+             position="0 0 -2.8"
+             rotation="90 0 180"
+             scale=".3 .3 .3"     
+             crossOrigin="anonymus">
+           </a-entity>
+           
+           <a-entity 
+            gltf-model="./assets/modelos/arnes/scene.gltf"
+            position="0 0 -1.8"
+            rotation="270 0 0"
+            scale="2 2 2"     
+            crossOrigin="anonymus">
+          </a-entity>
+                  
+           <a-entity 
+            gltf-model="./assets/modelos/guantes/scene.gltf"
+            position="0 0 0"
+            rotation="270 0 0"
+            scale=".1 .1 .1"     
+            crossOrigin="anonymus">
+          </a-entity>
+        </a-marker>
 
-    <ion-content>
+<!--##########################################################################################################################-->
+        <a-marker type="pattern" url="./assets/markers/pattern-1.patt">
+          
+         <a-entity text="align: center; width: 3; value: Casco;"
+          gltf-model="./assets/modelos/casco/scene.gltf"
+          position="0 0 -3"
+          rotation="270 0 0"
+          scale=".3 .3 .3"            
+          crossOrigin="anonymus">
+          </a-entity>
+          <a-text value=" <-- CASCO DE SEGURIDAD" 
+            negate="false"
+            align="center"
+            font="https://cdn.aframe.io/fonts/Monoid.fnt"
+            color="white"          
+            scale="1 1 1" 
+            position="2.5 0 -3.2"
+            rotation="245 0 0"
+            animation="property: position; to: 2.2 0 -3.2; dur: 10000; easing: linear; loop: true">
+          </a-text>
+          
+          <a-entity
+            gltf-model="./assets/modelos/gafas/scene.gltf"
+            position="0 0 -2.8"
+            rotation="90 0 180"
+            scale=".3 .3 .3"     
+            crossOrigin="anonymus">
+          </a-entity>
 
-      <!-- busca -->
-      
-      <div class="item item-input-inset">
-        <label class="item-input-wrapper" id="search-input">
-          <i class="icon ion-search placeholder-icon"></i>
-          <input type="text" placeholder="Buscar...">
-        </label>
-      </div>
+          <a-text value=" <-- GAFAS DE TRABAJO" 
+            negate="false"
+            align="center"
+            font="https://cdn.aframe.io/fonts/Monoid.fnt"
+            color="white"          
+            scale="1 1 1" 
+            position="2.5 0 -2.8"
+            rotation="245 0 0"
+            animation="property: position; to: 2 0 -2.8; dur: 10000; easing: linear; loop: true">
+          </a-text>
+          
+                 
+          <a-entity 
+            gltf-model="./assets/modelos/chaleco/scene.gltf"
+            position="0 0 2"
+            rotation="270 0 0"
+            scale="3 3 3"     
+            crossOrigin="anonymus">
+          </a-entity>
 
-      <!-- The list directive is great, but be sure to also checkout the collection repeat directive when scrolling through large lists -->
+          <a-text value=" <-- CHALECO DE SEGURIDAD" 
+            negate="false"
+            align="center"
+            font="https://cdn.aframe.io/fonts/Monoid.fnt"
+            color="white"          
+            scale="1 1 1" 
+            position="2.5 0 -2"
+            rotation="245 0 0"
+            animation="property: position; to: 2.2 0 -2; dur: 10000; easing: linear; loop: true">
+          </a-text>
+          
+          <!--a-entity gltf-model="./assets/modelos/zapatos/scene.gltf"
+            position="0 0 0"
+            rotation="0 270 90"
+            scale=".3 .3 .3"     
+            crossOrigin="anonymus">
+          </a-entity>
 
-      <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+          <a-text value=" <-- CALZADO DE SEGURIDAD" 
+            negate="false"
+            align="center"
+            font="https://cdn.aframe.io/fonts/Monoid.fnt"
+            color="white"          
+            scale="1 1 1" 
+            position="2.5 0 -0.5"
+            rotation="245 0 0"
+            animation="property: position; to: 2.2 0 -0.5; dur: 10000; easing: linear; loop: true">
+          </a-text-->
 
-        <ion-item ng-repeat="item in items" 
-                  href="#/item/{{item.id}}" class="item-remove-animate">
-          {{ item.image }} {{ item.titulo }} 
-          <p>{{ item.detalhes }}</p>
-          <ion-delete-button class="ion-minus-circled" 
-                             ng-click="onItemDelete({{item}})">
-          </ion-delete-button>
-          <ion-option-button class="button-assertive"
-                             ng-click="edit(item)">
-            Edit
-          </ion-option-button>
-          <ion-option-button class="button-calm"
-                             ng-click="share(item)">
-            Share
-          </ion-option-button>
-          <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
-        </ion-item>
+          <a-entity text="value: No ingresar\nsin estos EPP; font:	https://cdn.aframe.io/fonts/Monoid.fnt;   width: 2 "
+            align="center"
+            negate="false"           
+            color="yellow"          
+            scale="5 3 3" 
+            position="4 0 1"
+            rotation="245 0 0">
+          </a-entity>
+          
+          
+        </a-marker>
+<!--##########################################################################################################################-->
 
-      </ion-list>
+        <a-marker type="pattern" url="./assets/markers/pattern-2.patt">
+          
+          <a-entity
+             gltf-model="./assets/modelos/gafas/scene.gltf"
+             position="0 0 -2.1"
+             rotation="90 0 180"
+             scale=".3 .3 .3"     
+             crossOrigin="anonymus">
+          </a-entity>
 
-    </ion-content>
+          <a-text value=" <-- GAFAS DE TRABAJO" 
+            negate="false"
+            align="center"
+            font="https://cdn.aframe.io/fonts/Monoid.fnt"
+            color="white"          
+            scale="1 1 1" 
+            position="2 0 -2.1"
+            rotation="245 0 0"
+            animation="property: position; to: 1.5 0 -2.1; dur: 10000; easing: linear; loop: true">
+          </a-text>
 
-  </body>
-</html>
-<!-- partial -->
-  <script  src="./script.js"></script>
+          <a-entity 
+            gltf-model="./assets/modelos/barbijo/scene.gltf"
+            position="0 0 -1.5"
+            rotation="270 0 0"
+            scale=".5 .5 .5"     
+            crossOrigin="anonymus">
+          </a-entity>
 
+          <a-text value=" <-- BARBIJO" 
+            negate="false"
+            align="center"
+            font="https://cdn.aframe.io/fonts/Monoid.fnt"
+            color="white"          
+            scale="1 1 1" 
+            position="1.5 0 -1.8"
+            rotation="245 0 0"
+            animation="property: position; to: 1 0 -1.8; dur: 10000; easing: linear; loop: true">
+          </a-text>
+
+          <a-entity 
+            gltf-model="./assets/modelos/latex/scene.gltf"
+            position="0.5 0 -0.8"
+            rotation="0 0 0"
+            scale=".3 .3 .3"     
+            crossOrigin="anonymus">
+          </a-entity>
+
+          <a-text value=" <-- GUANTES DE LATEX" 
+            negate="false"
+            align="center"
+            font="https://cdn.aframe.io/fonts/Monoid.fnt"
+            color="white"          
+            scale="1 1 1" 
+            position="2 0 -1.4"
+            rotation="245 0 0"
+            animation="property: position; to: 1.7 0 -1.4; dur: 10000; easing: linear; loop: true">
+          </a-text>
+
+           <!--a-entity 
+             gltf-model="./assets/modelos/bota/scene.gltf"
+             position=".3 0 0"
+             rotation="-90 0 0"
+             scale="25 25 25"     
+             crossOrigin="anonymus">
+           </a-entity>
+
+           <a-text value=" <-- CALZADO DE SEGURIDAD" 
+            negate="false"
+            align="center"
+            font="https://cdn.aframe.io/fonts/Monoid.fnt"
+            color="white"          
+            scale="1 1 1" 
+            position="2 0 -0.5"
+            rotation="245 0 0"
+            animation="property: position; to: 1.8 0 -0.5; dur: 10000; easing: linear; loop: true">
+           </a-text-->
+           
+           
+         </a-marker>
+
+
+<!--##########################################################################################################################-->
+
+
+         <a-marker preset="hiro">
+          
+          <a-entity text="align: center; width: 3; value: Casco;"
+           gltf-model="./assets/modelos/casco/scene.gltf"
+           position="0 0 -3"
+           rotation="270 0 0"
+           scale=".3 .3 .3"            
+           crossOrigin="anonymus">
+           </a-entity>
+           <a-text value=" <-- CASCO DE SEGURIDAD" 
+             negate="false"
+             align="center"
+             font="https://cdn.aframe.io/fonts/Monoid.fnt"
+             color="white"          
+             scale="1 1 1" 
+             position="2.5 0 -3.2"
+             rotation="245 0 0"
+             animation="property: position; to: 2.2 0 -3.2; dur: 10000; easing: linear; loop: true">
+           </a-text>
+           
+           <a-entity
+             gltf-model="./assets/modelos/gafas/scene.gltf"
+             position="0 0 -2.8"
+             rotation="90 0 180"
+             scale=".3 .3 .3"     
+             crossOrigin="anonymus">
+           </a-entity>
+ 
+           <a-text value=" <-- GAFAS DE TRABAJO" 
+             negate="false"
+             align="center"
+             font="https://cdn.aframe.io/fonts/Monoid.fnt"
+             color="white"          
+             scale="1 1 1" 
+             position="2.5 0 -2.8"
+             rotation="245 0 0"
+             animation="property: position; to: 2 0 -2.8; dur: 10000; easing: linear; loop: true">
+           </a-text>
+           
+                  
+           <a-entity 
+             gltf-model="./assets/modelos/arnes/scene.gltf"
+             position="0 0 -1.6"
+             rotation="270 0 0"
+             scale="3 1.5 1.5"     
+             crossOrigin="anonymus">
+           </a-entity>
+ 
+           <a-text value=" <-- ARNES DE SEGURIDAD" 
+             negate="false"
+             align="center"
+             font="https://cdn.aframe.io/fonts/Monoid.fnt"
+             color="white"          
+             scale="1 1 1" 
+             position="2.5 0 -2"
+             rotation="245 0 0"
+             animation="property: position; to: 2.2 0 -2; dur: 10000; easing: linear; loop: true">
+           </a-text>
+           
+           <a-entity gltf-model="./assets/modelos/zapatos/scene.gltf"
+             position="0 0 0"
+             rotation="0 270 90"
+             scale=".3 .3 .3"     
+             crossOrigin="anonymus">
+           </a-entity>
+ 
+           <a-text value=" <-- CALZADO DE SEGURIDAD" 
+             negate="false"
+             align="center"
+             font="https://cdn.aframe.io/fonts/Monoid.fnt"
+             color="white"          
+             scale="1 1 1" 
+             position="2.5 0 -0.5"
+             rotation="245 0 0"
+             animation="property: position; to: 2.2 0 -0.5; dur: 10000; easing: linear; loop: true">
+           </a-text>
+ 
+           <a-entity text="value: No ingresar\nsin estos EPP; font:	https://cdn.aframe.io/fonts/Monoid.fnt;   width: 2 "
+             align="center"
+             negate="false"           
+             color="yellow"          
+             scale="5 3 3" 
+             position="4 0 1"
+             rotation="245 0 0">
+           </a-entity>
+           
+           
+         </a-marker>
+
+        
+        <a-entity camera>
+          
+        </a-entity>
+      </a-scene>
 </body>
+
+
+
 </html>
