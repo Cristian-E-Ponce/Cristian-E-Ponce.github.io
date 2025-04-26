@@ -49,6 +49,9 @@
         <symbol xmlns="http://www.w3.org/2000/svg" id="cart" viewBox="0 0 24 24">
           <path fill="currentColor" d="M8.5 19a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 8.5 19ZM19 16H7a1 1 0 0 1 0-2h8.491a3.013 3.013 0 0 0 2.885-2.176l1.585-5.55A1 1 0 0 0 19 5H6.74a3.007 3.007 0 0 0-2.82-2H3a1 1 0 0 0 0 2h.921a1.005 1.005 0 0 1 .962.725l.155.545v.005l1.641 5.742A3 3 0 0 0 7 18h12a1 1 0 0 0 0-2Zm-1.326-9l-1.22 4.274a1.005 1.005 0 0 1-.963.726H8.754l-.255-.892L7.326 7ZM16.5 19a1.5 1.5 0 1 0 1.5 1.5a1.5 1.5 0 0 0-1.5-1.5Z"/>
         </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" id="notification-bell" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 2a6 6 0 0 0-6 6v3.586l-.707.707A1 1 0 0 0 5 14h14a1 1 0 0 0 .707-1.707L19 11.586V8a6 6 0 0 0-6-6Zm0 20a2 2 0 0 0 1.995-1.85L14 20h-4a2 2 0 0 0 2 2Z"/>
+        </symbol>
         <symbol xmlns="http://www.w3.org/2000/svg" id="check" viewBox="0 0 24 24">
           <path fill="currentColor" d="M18.71 7.21a1 1 0 0 0-1.42 0l-7.45 7.46l-3.13-3.14A1 1 0 1 0 5.29 13l3.84 3.84a1 1 0 0 0 1.42 0l8.16-8.16a1 1 0 0 0 0-1.47Z"/>
         </symbol>
@@ -130,22 +133,22 @@
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span class="text-primary">Buscar Beneficiarios</span>
           </h4>
-          <form role="search" action="index.html" method="get" class="d-flex mt-3 gap-0">
-            <select class="form-select border-0 bg-transparent">
-              <option>Ubicación</option>
-              <option>Buenos Aires</option>
-              <option>Mendoza</option>
-              <option>Cordoba</option>
+          <form role="search" action="index.html" method="get" class="d-flex flex-column mt-3 gap-2">
+            <select class="form-select border-0 bg-transparent" required>
+              <option value="" disabled selected hidden>Ubicación</option>
+              <option value="Buenos Aires">Buenos Aires</option>
+              <option value="Mendoza">Mendoza</option>
+              <option value="Cordoba">Cordoba</option>
             </select>
-            <select class="form-select border-0 bg-transparent">
-              <option>Categoria</option>
-              <option>Alimentos</option>
-              <option>Indumentaria</option>
-              <option>Limpieza</option>
+            <select class="form-select border-0 bg-transparent" required>
+              <option value="" disabled selected hidden>Categoría</option>
+              <option value="Alimentos">Alimentos</option>
+              <option value="Indumentaria">Indumentaria</option>
+              <option value="Limpieza">Limpieza</option>
             </select>
-            <input class="form-control rounded-start rounded-0 bg-light" type="email" placeholder="" aria-label="What are you looking for?">
-            <button class="btn btn-dark rounded-end rounded-0" type="submit">Buscar</button>
-          </form>
+            <input class="form-control bg-light" type="text" placeholder="" aria-label="What are you looking for?">
+            <button class="btn btn-dark mt-2" type="submit">Buscar</button>
+          </form>     
         </div>
       </div>
     </div>
